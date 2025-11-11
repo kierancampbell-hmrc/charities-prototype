@@ -1,0 +1,37 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+    {{ govukInput({
+    label: {
+        text: "Name of charity or CASC (a maximum of 160 characters is allowed)",
+        classes: "govuk-label--l",
+        isPageHeading: true
+    },
+    hint: {
+    text: "Enter your client's full name here. Please make sure this is correct (the same name your client registered with HM Revenue & Customs) or your claim may be rejected."
+    },
+    id: "charity-name",
+    name: "charityName"
+    }) }}
+    {{ govukButton({
+          text: "Next",
+          href:"test-home"
+        }) }}
+    </div>
+  </div>
+{% endblock %}

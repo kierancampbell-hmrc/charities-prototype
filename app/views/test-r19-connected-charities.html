@@ -1,0 +1,50 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="/form-handler-connected-charities" method="post" novalidate>
+
+        {{ govukRadios({
+          name: "connectedCharities",
+          fieldset: {
+            legend: {
+              text: "Are you connected to any other charities or CASCs for the purpose of GASDS?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "Choose 'Yes' if the charity or Community Amateur Sports Club (CASC) is connected to another charity or CASC under the Gift Aid Small Donations Scheme rules. The connected charities and CASCs that claim a top-up payment for the year will share the maximum £1,250 payments limit for the tax year."
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Next"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

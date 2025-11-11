@@ -1,0 +1,37 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+    {{ govukInput({
+    label: {
+        text: "HMRC charities reference",
+        classes: "govuk-label--l",
+        isPageHeading: true
+    },
+    hint: {
+    text: "Enter your client's Charity HM Revenue & Customs reference number here. The reference will start with either one or two letters and will include up to 5 numbers."
+    },
+    id: "charity-reference-number",
+    name: "charityReferenceNumber"
+    }) }}
+    {{ govukButton({
+          text: "Next",
+          href:"test-r16-charity-name"
+        }) }}
+    </div>
+  </div>
+{% endblock %}
