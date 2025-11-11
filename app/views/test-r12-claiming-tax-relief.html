@@ -27,7 +27,12 @@
             }
           },
           hint: {
-            text: "Select 'Yes' if you want to claim a repayment of tax deducted from 'other income'."
+            html: '<p class="govuk-body">Text relief can include:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>Bank or Building Society interest</li>
+                      <li>Tax shown on a R185E certificate</li>
+                      <li>Tax deducted from a Discretionary Trust payment</li>
+                    </ul>'
           },
           items: [
             {
@@ -43,7 +48,7 @@
         
 
         {{ govukButton({
-          text: "Next"
+          text: "Continue"
         }) }}
       </form>
     </div>
