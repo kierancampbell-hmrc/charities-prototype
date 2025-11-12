@@ -1,5 +1,5 @@
 {
-  "serviceName": "Service name goes here",
+  "serviceName": "Charities REG Decision Service ISIT4",
   "plugins": {
     "govuk-frontend": {
       "rebrand": true
