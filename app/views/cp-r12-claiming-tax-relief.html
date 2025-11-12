@@ -14,21 +14,26 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">Gift Aid Small Donations Scheme</h1>
 
-      <form action="/form-handler-gasds" method="post" novalidate>
-      <p class="govuk-body">This is separate to a Gift Aid claim.
-
-The Gift Aid Small Donation Scheme (GASDS) is for donations of £20 or less and does not need declaring.</p>
+      <form action="/form-handler-tax-relief" method="post" novalidate>
 
         {{ govukRadios({
-          name: "gasds",
+          classes: "govuk-radios--inline",
+          name: "taxRelief",
           fieldset: {
             legend: {
-              text: "Are you claiming for the Gift Aid Small Donations Scheme?",
+              text: "Are you claiming UK tax deducted from other income?",
               isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
+              classes: "govuk-fieldset__legend--l"
             }
+          },
+          hint: {
+            html: '<p class="govuk-body">Text relief can include:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>Bank or Building Society interest</li>
+                      <li>Tax shown on a R185E certificate</li>
+                      <li>Tax deducted from a Discretionary Trust payment</li>
+                    </ul>'
           },
           items: [
             {
@@ -41,6 +46,7 @@ The Gift Aid Small Donation Scheme (GASDS) is for donations of £20 or less and 
             }
           ]
         }) }}
+        
 
         {{ govukButton({
           text: "Continue"

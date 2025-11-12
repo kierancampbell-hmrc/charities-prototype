@@ -9,8 +9,24 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 {% block header %}
 
     {{ govukHeader() }}
-    {{ govukServiceNavigation({
-        serviceName: serviceName
-    })}}
+    {%- from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation -%}
+{%- from "hmrc/components/service-navigation-language-select/macro.njk" import hmrcServiceNavigationLanguageSelect -%}
+
+{{ govukServiceNavigation({
+  serviceName: serviceName,
+  serviceUrl: "#",
+  classes: "hmrc-service-navigation--with-language-select",
+  slots: {
+    end: hmrcServiceNavigationLanguageSelect({
+      language: 'en',
+      en: {
+        href: '?en'
+      },
+      cy: {
+        href: '?cy'
+      }
+    })
+  }
+}) }}
 
 {% endblock %}

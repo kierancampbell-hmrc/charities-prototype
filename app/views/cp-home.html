@@ -10,7 +10,25 @@
 {% endblock %}
 
 {% block beforeContent %}
+{%- from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation -%}
+{%- from "hmrc/components/service-navigation-language-select/macro.njk" import hmrcServiceNavigationLanguageSelect -%}
 
+{{ govukServiceNavigation({
+  serviceName: "Service name",
+  serviceUrl: "#",
+  classes: "hmrc-service-navigation--with-language-select",
+  slots: {
+    end: hmrcServiceNavigationLanguageSelect({
+      language: 'en',
+      en: {
+        href: '?en'
+      },
+      cy: {
+        href: '?cy'
+      }
+    })
+  }
+}) }}
 {% endblock %}
 
 {% block content %}
