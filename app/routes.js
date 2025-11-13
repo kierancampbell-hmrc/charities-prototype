@@ -37,11 +37,24 @@ router.post ('/form-handler-gasds', function (req, res) {
     const gasds = req.body.gasds;
 
     if(gasds === 'yes') {
-        res.redirect('/cp-r13-claim-reference-number');
+        res.redirect('/cp-r13-claim-reference-number-check');
     } else if(gasds === 'no') {
-        res.redirect('/cp-r13-claim-reference-number');
+        res.redirect('/cp-r13-claim-reference-number-check');
     } else {
         res.redirect('/cp-r12-claiming-gasds');
+    }
+})
+
+// "Claiming r13 claim-reference-number-check" route
+router.post ('/form-handler-claim-reference-number-check', function (req, res) {
+    const claimRefNumberCheck = req.body.claimRefNumberCheck;
+
+    if(claimRefNumberCheck === 'yes') {
+        res.redirect('/cp-r14-claim-reference-number');
+    } else if(claimRefNumberCheck === 'no') {
+        res.redirect('/cp-r15-declaration');
+    } else {
+        res.redirect('/cp-r13-claim-reference-number-check');
     }
 })
 
