@@ -16,7 +16,7 @@
     {% from "govuk/components/tabs/macro.njk" import govukTabs %}
     {% from "govuk/components/table/macro.njk" import govukTable %}
 
-    {% set pastDayHtml %}
+    {% set currentVersionHtml %}
     <h2 class="govuk-heading-l">Current version</h2>
     {{ govukTable({
       head: [
@@ -33,108 +33,80 @@
       rows: [
         [
           {
-            text: "David Francis"
+            html: '<a href="/cp-r10-claiming-gift-aid" class="govuk-link">Sprint 0<a/>'
           },
           {
-            text: "3"
+            text: "–"
           },
           {
-            text: "0"
-          }
-        ],
-        [
-          {
-            text: "Paul Farmer"
-          },
-          {
-            text: "1"
-          },
-          {
-            text: "0"
-          }
-        ],
-        [
-          {
-            text: "Rita Patel"
-          },
-          {
-            text: "2"
-          },
-          {
-            text: "0"
+            text: "–"
           }
         ]
       ]
     }) }}
     {% endset -%}
 
-    {% set pastWeekHtml %}
-    <h2 class="govuk-heading-l">Past week</h2>
+    {% set previousVersionsHtml %}
+    <h2 class="govuk-heading-l">Previous versions</h2>
     {{ govukTable({
       head: [
         {
-          text: "Case manager"
+          text: "Version"
         },
         {
-          text: "Cases opened"
+          text: "Date created"
         },
         {
-          text: "Cases closed"
+          text: "Notes"
         }
       ],
       rows: [
         [
           {
-            text: "David Francis"
+            text: "–"
           },
           {
-            text: "24"
+            text: "–"
           },
           {
-            text: "18"
-          }
-        ],
-        [
-          {
-            text: "Paul Farmer"
-          },
-          {
-            text: "16"
-          },
-          {
-            text: "20"
-          }
-        ],
-        [
-          {
-            text: "Rita Patel"
-          },
-          {
-            text: "24"
-          },
-          {
-            text: "27"
+            text: "–"
           }
         ]
       ]
     }) }}
     {% endset -%}
 
+    {% set documentationHtml %}
+      <h2 class="govuk-heading-l">Documentation</h2>
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link" href="https://confluence.tools.tax.service.gov.uk/display/RBD/Charities+-+Screen+Remodelling" target="_blank">Confluence</a>
+        </li>
+      </ul>
+    {% endset -%}
+
     {{ govukTabs({
       items: [
         {
-          label: "Past day",
-          id: "past-day",
+          label: "Current Version",
+          id: "current-version",
           panel: {
-            html: pastDayHtml
+            html: currentVersionHtml
           }
         },
         {
-          label: "Past week",
-          id: "past-week",
+          label: "Previous Versions",
+          id: "previous-versions",
           panel: {
-            html: pastWeekHtml
+            html: previousVersionsHtml
           }
+        },
+        {
+          label: "Documentation",
+          id: "documentation",
+          panel: {
+            html: documentationHtml
+            }
         }
       ]
     }) }}
