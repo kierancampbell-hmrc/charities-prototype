@@ -11,11 +11,11 @@ router.post ('/form-handler-gift-aid', function (req, res) {
     const giftAid = req.body.giftAid;
 
     if(giftAid === 'yes') {
-        res.redirect('/test-r12-claiming-tax-relief');
+        res.redirect('/cp-r12-claiming-tax-relief');
     } else if(giftAid === 'no') {
-        res.redirect('/test-r12-claiming-tax-relief');
+        res.redirect('/cp-r12-claiming-tax-relief');
     } else {
-        res.redirect('/test-r11-claiming-gift-aid');
+        res.redirect('/cp-r11-claiming-gift-aid');
     }
 })
 
@@ -24,11 +24,11 @@ router.post ('/form-handler-tax-relief', function (req, res) {
     const taxRelief = req.body.taxRelief;
 
     if(taxRelief === 'yes') {
-        res.redirect('/test-r13-claiming-gasds');
+        res.redirect('/cp-r13-claiming-gasds');
     } else if(taxRelief === 'no') {
-        res.redirect('/test-r13-claiming-gasds');
+        res.redirect('/cp-r13-claiming-gasds');
     } else {
-        res.redirect('/test-r12-claiming-tax-relief');
+        res.redirect('/cp-r12-claiming-tax-relief');
     }
 })
 
@@ -37,11 +37,11 @@ router.post ('/form-handler-gasds', function (req, res) {
     const gasds = req.body.gasds;
 
     if(gasds === 'yes') {
-        res.redirect('/test-r14-claim-reference-number');
+        res.redirect('/cp-r14-claim-reference-number');
     } else if(gasds === 'no') {
-        res.redirect('/test-home');
+        res.redirect('/cp-home');
     } else {
-        res.redirect('/test-r13-claiming-gasds');
+        res.redirect('/cp-r13-claiming-gasds');
     }
 })
 
@@ -50,11 +50,11 @@ router.post ('/form-handler-gasds-non-community', function (req, res) {
     const gasdsNonCom = req.body.gasdsNonCom;
 
     if(gasdsNonCom === 'yes') {
-        res.redirect('/test-r18-gasds-community');
+        res.redirect('/cp-r18-gasds-community');
     } else if(gasdsNonCom === 'no') {
-        res.redirect('/test-r18-gasds-community');
+        res.redirect('/cp-r18-gasds-community');
     } else {
-        res.redirect('/test-r17-gasds-non-community');
+        res.redirect('/cp-r17-gasds-non-community');
     }
 })
 
@@ -63,11 +63,11 @@ router.post ('/form-handler-gasds-community', function (req, res) {
     const gasdsCom = req.body.gasdsCom;
 
     if(gasdsCom === 'yes') {
-        res.redirect('/test-r19-connected-charities');
+        res.redirect('/cp-r19-connected-charities');
     } else if(gasdsCom === 'no') {
-        res.redirect('/test-r19-connected-charities');
+        res.redirect('/cp-r19-connected-charities');
     } else {
-        res.redirect('/test-r18-gasds-community');
+        res.redirect('/cp-r18-gasds-community');
     }
 })
 
@@ -76,10 +76,10 @@ router.post ('/form-handler-connected-charities', function (req, res) {
     const connectedCharities = req.body.connectedCharities;
 
     if(connectedCharities === 'yes') {
-        res.redirect('/test-r110-gasds-claim-adjustment');
+        res.redirect('/cp-r110-gasds-claim-adjustment');
     } else if(connectedCharities === 'no') {
-        res.redirect('/test-r110-gasds-claim-adjustment');
+        res.redirect('/cp-r110-gasds-claim-adjustment');
     } else {
-        res.redirect('/test-r19-connected-charities');
+        res.redirect('/cp-r19-connected-charities');
     }
 })
