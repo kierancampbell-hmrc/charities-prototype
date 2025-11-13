@@ -1,0 +1,121 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+    {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+    <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Check your answers
+      </h1>
+
+    {{ govukSummaryList({
+    rows: [
+        {
+        key: {
+            text: "Are you claiming Gift Aid?"
+        },
+        value: {
+            text: "Yes"
+        },
+        actions: {
+            items: [
+            {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "name"
+            }
+            ]
+        }
+        },
+        {
+        key: {
+            text: "Are you claiming UK tax deducted from other income?"
+        },
+        value: {
+            text: "No"
+        },
+        actions: {
+            items: [
+            {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "date of birth"
+            }
+            ]
+        }
+        },
+        {
+        key: {
+            text: "Are you claiming for the Gift Aid Small Donations Scheme?"
+        },
+        value: {
+            html: "No"
+        },
+        actions: {
+            items: [
+            {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "address"
+            }
+            ]
+        }
+        },
+        {
+        key: {
+            text: "Do you have a claim reference number?"
+        },
+        value: {
+            html: 'Yes'
+        },
+        actions: {
+            items: [
+            {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "contact details"
+            }
+            ]
+        }
+        },
+        {
+        key: {
+            text: "What is your reference number?"
+        },
+        value: {
+            html: '[reference number]'
+        },
+        actions: {
+            items: [
+            {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "contact details"
+            }
+            ]
+        }
+        }
+        ]
+        })
+    }}
+    {{ govukButton({
+        text: "Save and continue",
+        href:"index"
+    }) }}
+    </div>
+    </div>
+    {% endblock %}
