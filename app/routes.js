@@ -11,37 +11,37 @@ router.post ('/form-handler-gift-aid', function (req, res) {
     const giftAid = req.body.giftAid;
 
     if(giftAid === 'yes') {
-        res.redirect('/cp-r12-claiming-tax-relief');
+        res.redirect('/cp-r11-claiming-tax-relief');
     } else if(giftAid === 'no') {
-        res.redirect('/cp-r12-claiming-tax-relief');
+        res.redirect('/cp-r11-claiming-tax-relief');
     } else {
         res.redirect('/cp-r11-claiming-gift-aid');
     }
 })
 
-// "Claiming r12 tax relief" route
+// "Claiming r11 tax relief" route
 router.post ('/form-handler-tax-relief', function (req, res) {
     const taxRelief = req.body.taxRelief;
 
     if(taxRelief === 'yes') {
-        res.redirect('/cp-r13-claiming-gasds');
+        res.redirect('/cp-r12-claiming-gasds');
     } else if(taxRelief === 'no') {
-        res.redirect('/cp-r13-claiming-gasds');
+        res.redirect('/cp-r12-claiming-gasds');
     } else {
-        res.redirect('/cp-r12-claiming-tax-relief');
+        res.redirect('/cp-r11-claiming-tax-relief');
     }
 })
 
-// "Claiming r13 gasds" route
+// "Claiming r12 gasds" route
 router.post ('/form-handler-gasds', function (req, res) {
     const gasds = req.body.gasds;
 
     if(gasds === 'yes') {
-        res.redirect('/cp-r14-claim-reference-number');
+        res.redirect('/cp-r13-claim-reference-number');
     } else if(gasds === 'no') {
-        res.redirect('/cp-home');
+        res.redirect('/cp-r13-claim-reference-number');
     } else {
-        res.redirect('/cp-r13-claiming-gasds');
+        res.redirect('/cp-r12-claiming-gasds');
     }
 })
 
